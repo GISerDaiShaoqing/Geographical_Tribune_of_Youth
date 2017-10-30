@@ -1,0 +1,135 @@
+﻿<html>
+  <head>
+  <meta charset="utf-8">
+  <style type="text/css">
+  body {
+  margin: 0;
+  }
+  #main {
+  height: 100%;
+  }
+  </style>
+  </head>
+  <body>
+  <div id="main"></div>
+  <script src="echarts.js"></script>
+  <script src = "echarts-all.js"></script>
+  <script>
+  var myChart = echarts.init(document.getElementById("main"));
+
+  var optionID_20171030161804_51198 = 
+{
+  backgroundColor: '#1b1b1b',
+  color: ['gold','aqua','lime'],
+  title : {
+  text: '青刊成员去向',
+  subtext:'',
+  x:'center',
+  textStyle : {
+  color: '#fff'
+  }
+  },
+  tooltip : {
+  trigger: 'item',
+  formatter: '{b}'
+  },
+  toolbox: {
+  show : true,
+  orient : 'vertical',
+  x: 'right',
+  y: 'center',
+  feature : {
+  mark : {show: true},
+  dataView : {show: true, readOnly: false},
+  restore : {show: true},
+  saveAsImage : {show: true}
+  }
+  },
+  dataRange: {
+  min : 0,
+  show: false,
+  max : 100,
+  y: '60%',
+  calculable : true,
+  color: ['#ff3333', 'orange', 'yellow','lime','aqua']
+  },
+
+  series : [
+  {
+  type:'map',
+  itemStyle:{
+  normal:{
+  borderColor:'rgba(100,149,237,1)',
+  borderWidth: 0.5,
+  areaStyle:{
+  color: '#1b1b1b'
+  }
+  }
+  },
+  data:[],
+  geoCoord: {'min hou': [119.1385,26.15603],
+'xia men': [118.0964,24.48541],
+'bei jing': [116.4103,39.95110],
+'shang hai': [121.5588,31.23115],
+'guang zhou': [113.2966,23.14232],
+'lan zhou': [103.8405,36.06723]},
+
+  markLine : {
+  smooth:true,
+  effect : {
+  show: true,
+  scaleSize: 1,
+  period: 30,
+  color: '#fff',
+  shadowBlur: 10
+  },
+  itemStyle : {
+  color: 'red',
+  normal: {
+  borderWidth:1,
+  lineStyle: {
+  type: 'solid',
+  shadowBlur: 10
+  },
+  label:{show:false}
+  }
+  },
+
+  data : [
+  [{name:'min hou'}, {name:'xia men',value:60}],
+[{name:'min hou'}, {name:'bei jing',value:70}],
+[{name:'min hou'}, {name:'shang hai',value:60}],
+[{name:'min hou'}, {name:'guang zhou',value:20}],
+[{name:'min hou'}, {name:'lan zhou',value:40}]
+  ]
+  },
+  markPoint : {
+  symbol:'emptyCircle',
+  symbolSize : function (v){
+  return 10 + v/10
+  },
+  effect : {
+  show: true,
+  shadowBlur : 0
+  },
+  itemStyle:{
+  normal:{
+  label:{show:true}
+  }
+  },
+  data : [
+  {name:'xia men',value:60},
+{name:'bei jing',value:70},
+{name:'shang hai',value:60},
+{name:'guang zhou',value:20},
+{name:'lan zhou',value:40}
+  ]
+  }
+  }
+  ]
+  }
+;
+  myChart.setOption(optionID_20171030161804_51198);
+  </script>
+  </body>
+  </html>
