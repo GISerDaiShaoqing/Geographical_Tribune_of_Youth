@@ -1,1 +1,1 @@
-
+Website of Geographical Tribune of Youth
